@@ -9,18 +9,22 @@ public class MouseLook : MonoBehaviour
     //reference to the player transform
     public Transform playerBody;
 
-    float xRotation = 0f;
+    public float xRotation = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         //hide and lock cursor to the center of the screen.
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        //check isCursorActive in ActivateMouseCursor.cs bool to allow mouse look 
+
         //Gathering Input based on mouse movement along the x and y axis's, then multiplying by mouse sensitivity.
         //Time.deltaTime = time has gone by since the last update function was called
         //multiplying using this allows us to rotate camera independent of current framerate.
